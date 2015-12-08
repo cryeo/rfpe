@@ -1,0 +1,47 @@
+Title : 3PD-1MP
+Discount Rate : 0.9
+Variables : p=0.96
+Players : Player1 Player2
+Method : Expand
+
+Automaton Player1
+States : R P
+Actions : C D1 D2
+Signals : g b1 b2
+R C
+P D2
+R g R
+R b1 P
+R b2 P
+P g P
+P b1 P
+P b2 R
+
+Automaton Player2
+States : R P
+Actions : C D1 D2
+Signals : g b1 b2
+R C
+P D2
+R g R
+R b1 P
+R b2 P
+P g P
+P b1 P
+P b2 R
+
+Signal Distribution
+C,C : p (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8
+C,D1 : (1-p)/8 (1-p)/8 (1-p)/8 p (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8
+C,D2 : (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 p (1-p)/8 (1-p)/8
+D1,C : (1-p)/8 p (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8
+D1,D1 : (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 p (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8
+D1,D2 : (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 p (1-p)/8
+D2,C : (1-p)/8 (1-p)/8 p (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8
+D2,D1 : (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 p (1-p)/8 (1-p)/8 (1-p)/8
+D2,D2 : (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 (1-p)/8 p
+
+
+Payoff Matrix
+Player1: 1 0 -1 1.4 0.45 -0.5 1.8 0.9 0
+Player2: 1 1.4 1.8 0 0.45 0.9 -1 -0.5 0
